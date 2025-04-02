@@ -6,6 +6,25 @@
     <title>صفحتي</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+body {
+    background: black;
+    overflow: hidden; /* يمنع ظهور شريط تمرير غير مرغوب فيه */
+}
+
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.imgur.com/MWgJ7i1.png') repeat; /* صورة النجوم */
+    animation: starMove 50s linear infinite;
+}
+
+@keyframes starMove {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+}
+
+        
         body { 
             
             text-align: center; 
@@ -168,6 +187,9 @@
     
 </head>
 <body>
+
+    <div class="stars"></div>
+    
     <div class="container">
         <!-- صورة الوجو -->
         <img class="logo" src="https://i.imgur.com/GdH95vd.jpeg" alt="https://i.imgur.com/GdH95vd.jpg">
