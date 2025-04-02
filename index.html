@@ -20,6 +20,8 @@
             align-items: center;
             overflow-x: hidden;
         }
+
+        /* التأثيرات المتعلقة بالواجهة */
         .container { 
             background-color: rgba(0, 0, 0, 0.8); 
             padding: 40px; 
@@ -27,8 +29,8 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
             width: 80%;
             max-width: 550px;
-            opacity: 0;
-            animation: fadeIn 1.5s forwards;
+            position: relative; /* تعديل لتثبيت المحتوى */
+            z-index: 10;
         }
         .logo {
             width: 180px;
@@ -38,24 +40,20 @@
             object-fit: cover;
             border: 5px solid #fff;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            animation: bounce 2s infinite;
         }
         .name {
             font-size: 32px;
             font-weight: 600;
             margin-bottom: 20px;
             color: #f1c40f;
-            animation: slideUp 1s ease-in-out;
         }
         h1 { 
             font-size: 40px; 
             margin-bottom: 20px; 
-            animation: fadeInText 2s ease;
         }
         p { 
             font-size: 20px; 
             margin-bottom: 30px; 
-            animation: fadeInText 3s ease;
         }
         .social-links {
             display: flex;
@@ -84,10 +82,6 @@
             width: 30px; 
             height: 30px; 
             margin-bottom: 8px; 
-            transition: transform 0.3s ease;
-        }
-        .social-link:hover img {
-            transform: rotate(360deg);
         }
 
         /* معرض الرسومات */
@@ -100,19 +94,18 @@
             width: 80%;
             max-width: 800px;
             text-align: center;
+            z-index: 5;
         }
         .gallery h2 {
             font-size: 30px;
             margin-bottom: 20px;
             color: #f1c40f;
-            animation: fadeInText 2s ease;
         }
         .gallery-images {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 15px;
             justify-items: center;
-            animation: fadeInText 2s ease;
         }
         .gallery-images img {
             width: 100%;
@@ -157,18 +150,20 @@
 <body>
     <div class="container">
         <!-- صورة الوجو -->
-        <img class="logo" src="https://i.imgur.com/GdH95vd.jpeg" alt="https://i.imgur.com/GdH95vd.jpg">
-        <div class="name">omar_sib</div>
+        <img class="logo" src="https://i.imgur.com/GdH95vd.jpeg" alt="Logo">
+        <div class="name">اسمك هنا</div>
         <h1>مرحبًا بك!</h1>
         <p>اتبعني على مواقع التواصل:</p>
         <div class="social-links">
-            
+            <a class="social-link" href="https://discord.gg/yourserverinvite" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Discord_logo_2023.svg" alt="Discord">
+                Discord
             </a>
-            <a class="social-link" href="https://www.youtube.com/@omar_s_i_b" target="_blank">
+            <a class="social-link" href="https://youtube.com/" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
                 YouTube
             </a>
-            <a class="social-link" href="https://www.instagram.com/omar_s_i_b/" target="_blank">
+            <a class="social-link" href="https://instagram.com/" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
                 Instagram
             </a>
@@ -180,10 +175,10 @@
         <h2>رسوماتي</h2>
         <div class="gallery-images">
             <!-- ضع روابط الصور هنا -->
-<a href="https://imgur.com/iUnTNjf"><img src="https://i.imgur.com/iUnTNjf.jpg" title="source: imgur.com" /></a>
-<a href="https://imgur.com/xxzdxXg"><img src="https://i.imgur.com/xxzdxXg.jpg" title="source: imgur.com" /></a>
-<a href="https://imgur.com/zY0OFa4"><img src="https://i.imgur.com/zY0OFa4.jpg" title="source: imgur.com" /></a>
-            
+            <img src="https://i.imgur.com/8Njpzno.jpg" alt="رسم 1" class="image">
+            <img src="https://i.imgur.com/2qphuZI.jpg" alt="رسم 2" class="image">
+            <img src="https://i.imgur.com/WXYLg7F.jpg" alt="رسم 3" class="image">
+            <img src="https://i.imgur.com/O7kq7tx.jpg" alt="رسم 4" class="image">
         </div>
     </div>
 
