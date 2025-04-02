@@ -39,6 +39,22 @@ body {
             z-index: 1000;
             animation: fadeOut 3s forwards 2s;
         }
+            .intro img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            animation: scaleDown 2s forwards;
+        }
+
+        @keyframes scaleDown {
+            0% { transform: scale(2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; visibility: hidden; }
+        }
 
             
             text-align: center; 
