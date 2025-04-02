@@ -10,45 +10,41 @@
 
         
     /* شاشة الدخول */
-    .intro {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 10000;
-        animation: fadeOut 1.5s ease-out 3s forwards;
-    }
+.intro {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
+}
 
-    .intro img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        animation: shrink 1.5s ease-in-out 1.5s forwards;
-    }
+.intro img {
+    width: 100%;
+    max-width: 300px;
+    animation: scaleDown 1.5s ease-out forwards;
+}
 
-    @keyframes shrink {
-        from {
-            transform: scale(1);
-        }
-        to {
-            transform: scale(0);
-        }
+@keyframes scaleDown {
+    0% {
+        width: 100vw;
+        height: 100vh;
     }
+    100% {
+        width: 180px; /* حجم اللوجو النهائي */
+        height: 180px;
+    }
+}
 
-    @keyframes fadeOut {
-        from {
-            opacity: 1;
-        }
-        to {
-            opacity: 0;
-            visibility: hidden;
-        }
-    }
+/* إخفاء شاشة الدخول */
+.hide-intro {
+    opacity: 0;
+    visibility: hidden;
+}
+
 
 
 
@@ -233,11 +229,14 @@ body {
     
 </head>
 <body>
- <div class="intro">
-    <img src="https://i.imgur.com/GdH95vd.jpeg" alt="Logo">
-</div>
+
+
     
     <div class="container">
+        <div class="intro">
+    <img src="https://i.imgur.com/GdH95vd.jpeg" alt="Logo">
+</div>
+
         <!-- صورة الوجو -->
         <img class="logo" src="https://i.imgur.com/GdH95vd.jpeg" alt="https://i.imgur.com/GdH95vd.jpg">
         <div class="name">omar_sib</div>
@@ -301,5 +300,11 @@ body {
             overlay.style.display = 'none';
         });
     </script>
+    document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+        document.querySelector(".intro").classList.add("hide-intro");
+    }, 2000); // بعد ثانيتين يتم تصغير اللوجو
+});
+
 </body>
 </html>
