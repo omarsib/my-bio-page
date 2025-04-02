@@ -6,6 +6,46 @@
     <title>صفحتي</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* شاشة الدخول */
+    .intro {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+        animation: fadeOut 1.5s ease-out 3s forwards;
+    }
+
+    .intro img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        animation: shrink 1.5s ease-in-out 1.5s forwards;
+    }
+
+    @keyframes shrink {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale(0);
+        }
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
 }
 
         
@@ -26,6 +66,9 @@ body {
         
         body { 
 
+<div class="intro">
+    <img src="https://i.imgur.com/GdH95vd.jpeg" alt="Logo">
+</div>
 
             
             text-align: center; 
