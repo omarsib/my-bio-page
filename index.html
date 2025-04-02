@@ -16,9 +16,9 @@
             min-height: 100vh; 
             display: flex;
             flex-direction: column;
-            justify-content: center; /* تأكد من أن المحتوى في المنتصف */
-            align-items: center; /* محاذاة العناصر في المنتصف */
-            overflow-x: hidden; /* يمنع التمرير الأفقي */
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
         }
         .container { 
             background-color: rgba(0, 0, 0, 0.8); 
@@ -90,23 +90,6 @@
             transform: rotate(360deg);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes fadeInText {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-        @keyframes slideUp {
-            from { transform: translateY(30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
         /* معرض الرسومات */
         .gallery {
             margin-top: 50px;
@@ -137,17 +120,44 @@
             height: auto;
             border-radius: 10px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
         .gallery-images img:hover {
             transform: scale(1.1);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        /* تكبير الصورة مع البلور */
+        .zoomed-image {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 80%;
+            max-height: 80%;
+            z-index: 1000;
+            border: 5px solid #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            cursor: zoom-out;
+            object-fit: contain;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <!-- صورة الوجو -->
-        <img class="logo" src="https://i.imgur.com/GdH95vd.jpeg" alt="https://imgur.com/GdH95vd">
+        <img class="logo" src="https://i.imgur.com/GdH95vd.jpeg" alt="https://i.imgur.com/GdH95vd.jpg">
         <div class="name">omar_sib</div>
         <h1>مرحبًا بك!</h1>
         <p>اتبعني على مواقع التواصل:</p>
@@ -170,11 +180,37 @@
         <h2>رسوماتي</h2>
         <div class="gallery-images">
             <!-- ضع روابط الصور هنا -->
-<a href="https://imgur.com/xxzdxXg"><img src="https://i.imgur.com/xxzdxXg.jpg" title="source: imgur.com" /></a>
-<a href="https://imgur.com/zY0OFa4"><img src="https://i.imgur.com/zY0OFa4.jpg" title="source: imgur.com" /></a>
-<a href="https://imgur.com/iUnTNjf"><img src="https://i.imgur.com/iUnTNjf.jpg" title="source: imgur.com" /></a>
+    <a href="https://imgur.com/iUnTNjf"><img src="https://i.imgur.com/iUnTNjf.jpg" title="source: imgur.com" /></a>
+    <a href="https://imgur.com/zY0OFa4"><img src="https://i.imgur.com/zY0OFa4.jpg" title="source: imgur.com" /></a>
+    <a href="https://imgur.com/xxzdxXg"><img src="https://i.imgur.com/xxzdxXg.jpg" title="source: imgur.com" /></a>
             
         </div>
     </div>
+
+    <!-- صورة مكبرة مع الخلفية الباهتة -->
+    <div class="overlay"></div>
+    <img class="zoomed-image" src="" alt="Zoomed Image">
+
+    <script>
+        // اختر كل الصور في المعرض
+        const images = document.querySelectorAll('.gallery-images img');
+        const zoomedImage = document.querySelector('.zoomed-image');
+        const overlay = document.querySelector('.overlay');
+
+        // عند النقر على صورة
+        images.forEach(image => {
+            image.addEventListener('click', function() {
+                zoomedImage.src = this.src;
+                zoomedImage.style.display = 'block';
+                overlay.style.display = 'block';
+            });
+        });
+
+        // عند النقر على الصورة المكبرة أو الخلفية لإغلاقها
+        overlay.addEventListener('click', function() {
+            zoomedImage.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
