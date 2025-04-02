@@ -12,12 +12,12 @@
             background: linear-gradient(135deg, #00bcd4, #8e44ad); 
             color: white; 
             margin: 0; 
-            height: 100vh; 
+            padding: 0;
+            min-height: 100vh; 
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
-            overflow: hidden;
+            justify-content: flex-start; /* تأكد من أن المحتوى يبدأ من أعلى */
+            overflow-x: hidden; /* يمنع التمرير الأفقي */
         }
         .container { 
             background-color: rgba(0, 0, 0, 0.8); 
@@ -88,7 +88,7 @@
         .social-link:hover img {
             transform: rotate(360deg);
         }
-        
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -138,18 +138,17 @@
             transform: scale(1.1);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         }
-
     </style>
 </head>
 <body>
     <div class="container">
         <!-- صورة الوجو -->
-        <img class="logo" src="https://i.imgur.com/GdH95vd.jpeg" alt="https://imgur.com/a/sd-5FhKWLx">
+        <img class="logo" src="https://i.imgur.com/GdH95vd.jpeg" alt="https://i.imgur.com/GdH95vd.jpg">
         <div class="name">omar_sib</div>
         <h1>مرحبًا بك!</h1>
         <p>اتبعني على مواقع التواصل:</p>
         <div class="social-links">
-            
+           
             </a>
             <a class="social-link" href="https://www.youtube.com/@omar_s_i_b" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
@@ -167,54 +166,11 @@
         <h2>رسوماتي</h2>
         <div class="gallery-images">
             <!-- ضع روابط الصور هنا -->
-            <img src="https://placekitten.com/200/200" alt="https://i.imgur.com/iUnTNjf.jpeg">
-            <img src="https://placekitten.com/201/201" alt="https://imgur.com/zY0OFa4">
+            <img src="https://placekitten.com/200/200" alt="https://i.imgur.com/zY0OFa4.jpg">
+            <img src="https://placekitten.com/201/201" alt="https://i.imgur.com/iUnTNjf.jpg">
             <img src="https://placekitten.com/202/202" alt="رسم 3">
             <img src="https://placekitten.com/203/203" alt="رسم 4">
         </div>
     </div>
-
-    <!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحتي</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body { 
-            text-align: center; 
-            font-family: 'Poppins', sans-serif; 
-            background: linear-gradient(135deg, #00bcd4, #8e44ad); 
-            color: white; 
-            margin: 0; 
-            padding: 0;
-            min-height: 100vh; 
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; /* تأكد من أن المحتوى يبدأ من أعلى */
-            overflow-x: hidden; /* يمنع التمرير الأفقي */
-        }
-        .container { 
-            background-color: rgba(0, 0, 0, 0.8); 
-            padding: 40px; 
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
-            width: 80%;
-            max-width: 550px;
-            opacity: 0;
-            animation: fadeIn 1.5s forwards;
-        }
-        .logo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            object-fit: cover;
-            border: 5px solid #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            animation: bounce
-
-
 </body>
 </html>
