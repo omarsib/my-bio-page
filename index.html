@@ -9,46 +9,6 @@
 }
 
         
-    /* شاشة الدخول */
-.intro {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 1s ease-out, visibility 1s ease-out;
-}
-
-.intro img {
-    width: 100%;
-    max-width: 300px;
-    animation: scaleDown 1.5s ease-out forwards;
-}
-
-@keyframes scaleDown {
-    0% {
-        width: 100vw;
-        height: 100vh;
-    }
-    100% {
-        width: 180px; /* حجم اللوجو النهائي */
-        height: 180px;
-    }
-}
-
-/* إخفاء شاشة الدخول */
-.hide-intro {
-    opacity: 0;
-    visibility: hidden;
-}
-
-
-
-
-        
 @keyframes moveBackground {
     0% { background-position: 0% 0%; }
     50% { background-position: 100% 50%; }
@@ -65,7 +25,6 @@ body {
 }
         
         body { 
-
 
 
             
@@ -230,13 +189,8 @@ body {
 </head>
 <body>
 
-
     
     <div class="container">
-        <div class="intro">
-    <img src="https://i.imgur.com/GdH95vd.jpeg" alt="Logo">
-</div>
-
         <!-- صورة الوجو -->
         <img class="logo" src="https://i.imgur.com/GdH95vd.jpeg" alt="https://i.imgur.com/GdH95vd.jpg">
         <div class="name">omar_sib</div>
@@ -300,11 +254,5 @@ body {
             overlay.style.display = 'none';
         });
     </script>
-    document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(() => {
-        document.querySelector(".intro").classList.add("hide-intro");
-    }, 2000); // بعد ثانيتين يتم تصغير اللوجو
-});
-
 </body>
 </html>
