@@ -6,252 +6,79 @@
     <title>صفحتي</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-}
-
-        
-@keyframes moveBackground {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 0%; }
-}
-
-      
-
-
-body {
-    background: url('https://i.imgur.com/your-image.jpg') no-repeat center center fixed;
-    background-size: cover;
-    animation: moveBackground 10s linear infinite;
-}
-        
-        body { 
-
-
-            
-            text-align: center; 
-            font-family: 'Poppins', sans-serif; 
-            background: linear-gradient(135deg, #00bcd4, #8e44ad); 
-            color: white; 
-            margin: 0; 
-            padding: 0;
-            min-height: 100vh; 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow-x: hidden;
-        }
-
-        /* التأثيرات المتعلقة بالواجهة */
-        .container { 
-            background-color: rgba(0, 0, 0, 0.8); 
-            padding: 40px; 
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
-            width: 80%;
-            max-width: 550px;
-            position: relative; /* تعديل لتثبيت المحتوى */
-            z-index: 10;
-            opacity: 0;
-            animation: fadeIn 1s forwards; /* الأنيميشن: التلاشي */
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .logo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            object-fit: cover;
-            border: 5px solid #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease; /* إضافة حركة عند تمرير الفأرة */
-        }
-        .logo:hover {
-            transform: scale(1.1); /* تكبير الصورة عند المرور عليها */
-        }
-        .name {
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #f1c40f;
-        }
-        h1 { 
-            font-size: 40px; 
-            margin-bottom: 20px; 
-        }
-        p { 
-            font-size: 20px; 
-            margin-bottom: 30px; 
-        }
-        .social-links {
-            display: flex;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-        }
-        .social-link { 
-            display: inline-block; 
-            background: #222; 
-            color: white; 
-            padding: 12px; 
-            margin: 15px; 
-            width: 120px; 
-            text-decoration: none; 
-            border-radius: 12px; 
-            font-size: 18px; 
-            text-align: center;
-            transition: transform 0.3s ease, background 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-        .social-link:hover { 
-            background: #555; 
-            transform: scale(1.1); /* إضافة حركة التكبير عند المرور على الرابط */
-        }
-        .social-link img { 
-            width: 30px; 
-            height: 30px; 
-            margin-bottom: 8px; 
-        }
-
-        /* معرض الرسومات */
-        .gallery {
-            margin-top: 50px;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-            width: 80%;
-            max-width: 800px;
-            text-align: center;
-            z-index: 5;
-            opacity: 0;
-            animation: fadeIn 1s forwards 1s; /* الأنيميشن مع تأخير */
-        }
-        .gallery h2 {
-            font-size: 30px;
-            margin-bottom: 20px;
-            color: #f1c40f;
-        }
-        .gallery-images {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            justify-items: center;
-        }
-        .gallery-images img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-        .gallery-images img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-        }
-
-        /* تكبير الصورة مع البلور */
-        .zoomed-image {
-            display: none;
+        /* مقدمة الدخول */
+        .intro {
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 80%;
-            max-height: 80%;
-            z-index: 1000;
-            border: 5px solid #fff;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-            cursor: zoom-out;
-            object-fit: contain;
-            transition: transform 0.3s ease; /* إضافة حركة عند النقر */
-        }
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 999;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeOut 2s ease 2s forwards;
+        }
+        .intro img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            animation: shrinkLogo 2s ease 1.5s forwards;
+        }
+        @keyframes fadeOut {
+            to { opacity: 0; visibility: hidden; }
+        }
+        @keyframes shrinkLogo {
+            to { transform: scale(0.3); opacity: 0; }
+        }
+
+        /* حركة الدوائر في الخلفية */
+        .circles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: moveCircles 10s linear infinite;
+        }
+        @keyframes moveCircles {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+        
+        /* تأثير زيادة سرعة الحركة عند التمرير */
+        body.scrolled .circle {
+            animation-duration: 4s;
         }
     </style>
-    
 </head>
 <body>
-
+    <!-- مقدمة الدخول -->
+    <div class="intro">
+        <img src="https://i.imgur.com/GdH95vd.jpeg" alt="Logo">
+    </div>
     
-    <div class="container">
-        <!-- صورة الوجو -->
-        <img class="logo" src="https://i.imgur.com/GdH95vd.jpeg" alt="https://i.imgur.com/GdH95vd.jpg">
-        <div class="name">omar_sib</div>
-        <h1>welcome!</h1>
-        <p>"My social media accounts :)"</p>
-        <div class="social-links">
-
-           <a class="social-link" href="https://www.artstation.com/omarsib5" target="_blank">
-    <img src="https://i.imgur.com/zWtRxaE.png" alt="ArtStation">
-    ArtStation
-</a>
-            </a>
-            <a class="social-link" href="https://www.youtube.com/@omar_s_i_b" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
-                YouTube
-            </a>
-            <a class="social-link" href="https://www.instagram.com/omar_s_i_b/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-                Instagram
-            </a>
-        </div>
+    <!-- دوائر الخلفية -->
+    <div class="circles">
+        <div class="circle" style="top: 10%; left: 15%; width: 80px; height: 80px;"></div>
+        <div class="circle" style="top: 40%; left: 50%; width: 100px; height: 100px;"></div>
+        <div class="circle" style="top: 70%; left: 80%; width: 120px; height: 120px;"></div>
     </div>
-
-    <!-- معرض الرسومات -->
-    <div class="gallery">
-        <h2>"Some of my drawings"</h2>
-        <div class="gallery-images">
-            <!-- ضع روابط الصور هنا -->
-<a href="https://imgur.com/iUnTNjf"><img src="https://i.imgur.com/iUnTNjf.jpg" title="source: imgur.com" /></a>
-<a href="https://imgur.com/zY0OFa4"><img src="https://i.imgur.com/zY0OFa4.jpg" title="source: imgur.com" /></a>            
-<a href="https://imgur.com/xxzdxXg"><img src="https://i.imgur.com/xxzdxXg.jpg" title="source: imgur.com" /></a>
-            
-        </div>
-    </div>
-
-    <!-- صورة مكبرة مع الخلفية الباهتة -->
-    <div class="overlay"></div>
-    <img class="zoomed-image" src="" alt="Zoomed Image">
-
+    
+    <!-- سكريبت لتسريع الدوائر عند التمرير -->
     <script>
-        // اختر كل الصور في المعرض
-        const images = document.querySelectorAll('.gallery-images img');
-        const zoomedImage = document.querySelector('.zoomed-image');
-        const overlay = document.querySelector('.overlay');
-
-        // عند النقر على صورة
-        images.forEach(image => {
-            image.addEventListener('click', function(event) {
-                // منع الانتقال إلى الرابط
-                event.preventDefault();
-                
-                zoomedImage.src = this.src;
-                zoomedImage.style.display = 'block';
-                overlay.style.display = 'block';
-            });
-        });
-
-        // عند النقر على الصورة المكبرة أو الخلفية لإغلاقها
-        overlay.addEventListener('click', function() {
-            zoomedImage.style.display = 'none';
-            overlay.style.display = 'none';
+        window.addEventListener('scroll', () => {
+            document.body.classList.add('scrolled');
+            clearTimeout(window.scrollTimer);
+            window.scrollTimer = setTimeout(() => {
+                document.body.classList.remove('scrolled');
+            }, 500);
         });
     </script>
 </body>
