@@ -1,4 +1,4 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
@@ -20,18 +20,18 @@
             overflow: hidden;
         }
         .container { 
-            background-color: rgba(0, 0, 0, 0.7); 
-            padding: 30px; 
+            background-color: rgba(0, 0, 0, 0.8); 
+            padding: 40px; 
             border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
             width: 80%;
-            max-width: 450px;
+            max-width: 550px;
             opacity: 0;
             animation: fadeIn 1.5s forwards;
         }
         .logo {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             margin-bottom: 20px;
             object-fit: cover;
@@ -47,7 +47,7 @@
             animation: slideUp 1s ease-in-out;
         }
         h1 { 
-            font-size: 36px; 
+            font-size: 40px; 
             margin-bottom: 20px; 
             animation: fadeInText 2s ease;
         }
@@ -56,24 +56,39 @@
             margin-bottom: 30px; 
             animation: fadeInText 3s ease;
         }
-        .link { 
-            display: block; 
+        .social-links {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        .social-link { 
+            display: inline-block; 
             background: #222; 
             color: white; 
             padding: 12px; 
-            margin: 15px auto; 
-            width: 220px; 
+            margin: 15px; 
+            width: 120px; 
             text-decoration: none; 
             border-radius: 12px; 
             font-size: 18px; 
-            transition: background 0.3s ease, transform 0.3s ease;
+            text-align: center;
+            transition: transform 0.3s ease, background 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
-        .link:hover { 
+        .social-link:hover { 
             background: #555; 
-            transform: scale(1.05); 
+            transform: scale(1.1); 
         }
-
+        .social-link img { 
+            width: 30px; 
+            height: 30px; 
+            margin-bottom: 8px; 
+            transition: transform 0.3s ease;
+        }
+        .social-link:hover img {
+            transform: rotate(360deg);
+        }
+        
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -94,13 +109,25 @@
 </head>
 <body>
     <div class="container">
-       <img class="logo" src="https://i.imgur.com/GdH95vd.jpeg" alt="https://imgur.com/a/sd-5FhKWLx">
+        <!-- صورة الوجو -->
+        <img class="logo" src="https://i.imgur.com/GdH95vd.jpeg" alt="https://imgur.com/a/sd-5FhKWLx">
         <div class="name">omar_sib</div>
         <h1>مرحبًا بك!</h1>
-        <p>روابطي على مواقع التواصل:</p>
-        <a class="link" href="https://discord.com/" target="_blank">Discord</a>
-        <a class="link" href="https://www.youtube.com/@omar_s_i_b" target="_blank">YouTube</a>
-        <a class="link" href="https://www.instagram.com/omar_s_i_b/" target="_blank">Instagram</a>
+        <p>اتبعني على مواقع التواصل:</p>
+        <div class="social-links">
+            <a class="social-link" href="https://discord.com/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Discord_logo_2023.svg" alt="Discord">
+                Discord
+            </a>
+            <a class="social-link" href="https://www.youtube.com/@omar_s_i_b" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+                YouTube
+            </a>
+            <a class="social-link" href="https://www.instagram.com/omar_s_i_b/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                Instagram
+            </a>
+        </div>
     </div>
 </body>
 </html>
