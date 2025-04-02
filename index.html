@@ -105,6 +105,40 @@
             from { transform: translateY(30px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+
+        /* معرض الرسومات */
+        .gallery {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+        .gallery h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #f1c40f;
+            animation: fadeInText 2s ease;
+        }
+        .gallery-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            justify-items: center;
+            animation: fadeInText 2s ease;
+        }
+        .gallery-images img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-images img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
     </style>
 </head>
 <body>
@@ -127,5 +161,18 @@
             </a>
         </div>
     </div>
+
+    <!-- معرض الرسومات -->
+    <div class="gallery">
+        <h2>رسوماتي</h2>
+        <div class="gallery-images">
+            <!-- ضع روابط الصور هنا -->
+            <img src="https://placekitten.com/200/200" alt="https://i.imgur.com/iUnTNjf.jpeg">
+            <img src="https://placekitten.com/201/201" alt="https://imgur.com/a/oQxtYkw">
+            <img src="https://placekitten.com/202/202" alt="رسم 3">
+            <img src="https://placekitten.com/203/203" alt="رسم 4">
+        </div>
+    </div>
+
 </body>
 </html>
