@@ -31,7 +31,18 @@
             max-width: 550px;
             position: relative; /* تعديل لتثبيت المحتوى */
             z-index: 10;
+            opacity: 0;
+            animation: fadeIn 1s forwards; /* الأنيميشن: التلاشي */
         }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         .logo {
             width: 180px;
             height: 180px;
@@ -40,6 +51,10 @@
             object-fit: cover;
             border: 5px solid #fff;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease; /* إضافة حركة عند تمرير الفأرة */
+        }
+        .logo:hover {
+            transform: scale(1.1); /* تكبير الصورة عند المرور عليها */
         }
         .name {
             font-size: 32px;
@@ -76,7 +91,7 @@
         }
         .social-link:hover { 
             background: #555; 
-            transform: scale(1.1); 
+            transform: scale(1.1); /* إضافة حركة التكبير عند المرور على الرابط */
         }
         .social-link img { 
             width: 30px; 
@@ -95,6 +110,8 @@
             max-width: 800px;
             text-align: center;
             z-index: 5;
+            opacity: 0;
+            animation: fadeIn 1s forwards 1s; /* الأنيميشن مع تأخير */
         }
         .gallery h2 {
             font-size: 30px;
@@ -134,6 +151,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
             cursor: zoom-out;
             object-fit: contain;
+            transition: transform 0.3s ease; /* إضافة حركة عند النقر */
         }
         .overlay {
             display: none;
@@ -155,7 +173,7 @@
         <h1>مرحبًا بك!</h1>
         <p>اتبعني على مواقع التواصل:</p>
         <div class="social-links">
-            
+           
             </a>
             <a class="social-link" href="https://www.youtube.com/@omar_s_i_b" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
@@ -173,9 +191,9 @@
         <h2>رسوماتي</h2>
         <div class="gallery-images">
             <!-- ضع روابط الصور هنا -->
-<a href="https://imgur.com/iUnTNjf"><img src="https://i.imgur.com/iUnTNjf.jpg" title="source: imgur.com" /></a>           
+<a href="https://imgur.com/iUnTNjf"><img src="https://i.imgur.com/iUnTNjf.jpg" title="source: imgur.com" /></a>
+<a href="https://imgur.com/zY0OFa4"><img src="https://i.imgur.com/zY0OFa4.jpg" title="source: imgur.com" /></a>            
 <a href="https://imgur.com/xxzdxXg"><img src="https://i.imgur.com/xxzdxXg.jpg" title="source: imgur.com" /></a>
-<a href="https://imgur.com/zY0OFa4"><img src="https://i.imgur.com/zY0OFa4.jpg" title="source: imgur.com" /></a>
             
         </div>
     </div>
