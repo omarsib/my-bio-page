@@ -327,6 +327,15 @@ body {
     // إضافة الحدث لكل فيديو
     videos.forEach(video => {
         video.addEventListener('click', () => {
+            // إيقاف جميع الفيديوهات الأخرى
+            videos.forEach(v => {
+                // إذا كان الفيديو يعمل (أي في حالة التشغيل) أوقفه
+                const videoElement = v.contentWindow.document.querySelector('video');
+                if (videoElement && !videoElement.paused) {
+                    videoElement.pause();
+                }
+            });
+
             // التحقق إذا كان الفيديو في وضع فول سكرين
             if (document.fullscreenElement) {
                 // إذا كان الفيديو في فول سكرين بالفعل، نخرجه
