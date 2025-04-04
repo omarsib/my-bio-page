@@ -319,36 +319,32 @@ body {
     </div>
 </div>
 
+   
+</body>
 
-<script>
+    <script>
     // العثور على جميع الفيديوهات
     const videos = document.querySelectorAll('.video-item iframe');
 
-    // إضافة الحدث لكل فيديو
     videos.forEach(video => {
         video.addEventListener('click', () => {
-            // إيقاف جميع الفيديوهات الأخرى
+            // الخروج من أي وضع fullscreen
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            }
+
+            // إيقاف تشغيل الفيديوهات الأخرى بإعادة تحميل iframe
             videos.forEach(v => {
-                // إذا كان الفيديو يعمل (أي في حالة التشغيل) أوقفه
-                const videoElement = v.contentWindow.document.querySelector('video');
-                if (videoElement && !videoElement.paused) {
-                    videoElement.pause();
+                if (v !== video) {
+                    const src = v.src;
+                    v.src = src; // هذا يعيد تحميل الفيديو فيتوقف
                 }
             });
 
-            // التحقق إذا كان الفيديو في وضع فول سكرين
-            if (document.fullscreenElement) {
-                // إذا كان الفيديو في فول سكرين بالفعل، نخرجه
-                document.exitFullscreen();
-            } else {
-                // إذا لم يكن في فول سكرين، ندخله
-                video.requestFullscreen();
-            }
+            // تشغيل fullscreen للفيديو الحالي
+            video.requestFullscreen();
         });
     });
 </script>
-
-    
-</body>
 
 </html>
