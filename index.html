@@ -15,7 +15,44 @@
     100% { background-position: 0% 0%; }
 }
 
-      
+      .videos-section {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+    z-index: 5;
+}
+
+.videos-section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #f1c40f;
+}
+
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* تكيف عدد الأعمدة بناءً على العرض */
+    gap: 15px;
+    justify-items: center;
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 200px; /* تغيير الحجم حسب الحاجة */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.video-item iframe:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
 
 
 body {
@@ -256,5 +293,20 @@ body {
             overlay.style.display = 'none';
         });
     </script>
+
+<div class="videos-section">
+    <h2>معرض الفيديوهات</h2>
+    <div class="video-gallery">
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <!-- أضف المزيد من الفيديوهات حسب الحاجة -->
+    </div>
+</div>
+
+    
 </body>
 </html>
