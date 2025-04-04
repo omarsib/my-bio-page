@@ -225,6 +225,9 @@ body {
     
 </head>
 <body>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+    
 
     
     <div class="container">
@@ -295,33 +298,33 @@ body {
     </script>
 
 <div class="videos-section">
-    <h2>"Some of my videos"</h2>
+    <h2>معرض الفيديوهات</h2>
     <div class="video-gallery">
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/mCRtY12LKCY" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/07CuvuYCweQ" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/zxR6_dK5B5w" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/nz69XBXdVOk" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/mAihONZPViI" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/__urE3ORryk" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <!-- أضف المزيد من الفيديوهات حسب الحاجة -->
+        <div class="video-item" id="video1"></div>
+        <div class="video-item" id="video2"></div>
+        <div class="video-item" id="video3"></div>
+        <div class="video-item" id="video4"></div>
+        <div class="video-item" id="video5"></div>
     </div>
 </div>
 
+
     </script>
     
-   
+   let players = [];
+
+function onYouTubeIframeAPIReady() {
+    players.push(new YT.Player('video1', {
+        height: '360',
+        width: '640',
+        videoId: 'mCRtY12LKCY',
+        events: {
+            'onStateChange': onPlayerStateChange
+        }
+    }));
+    // أضف مشغل فيديوهات آخر بنفس الطريقة
+}
+
 </body>
 
 </html>
