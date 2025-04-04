@@ -323,4 +323,24 @@ body {
 
     
 </body>
+
+    <script>
+    // العثور على جميع الفيديوهات
+    const videos = document.querySelectorAll('.video-item iframe');
+
+    // إضافة الحدث لكل فيديو
+    videos.forEach(video => {
+        video.addEventListener('click', () => {
+            // التحقق إذا كان الفيديو في وضع فول سكرين
+            if (document.fullscreenElement) {
+                // إذا كان الفيديو في فول سكرين بالفعل، نخرجه
+                document.exitFullscreen();
+            } else {
+                // إذا لم يكن في فول سكرين، ندخله
+                video.requestFullscreen();
+            }
+        });
+    });
+</script>
+
 </html>
