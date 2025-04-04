@@ -320,29 +320,33 @@ body {
 </div>
 
  <script>
-    // العثور على جميع الفيديوهات
-    const videos = document.querySelectorAll('.video-item iframe');
+        // العثور على جميع الفيديوهات
+        const videos = document.querySelectorAll('.video-item iframe');
+        let currentFullscreenVideo = null;
 
-    videos.forEach(video => {
-        video.addEventListener('click', () => {
-            // الخروج من أي وضع fullscreen
-            if (document.fullscreenElement) {
-                document.exitFullscreen();
-            }
+        videos.forEach(video => {
+            video.addEventListener('click', () => {
+                // إذا كان الفيديو في وضع fullscreen بالفعل
+                if (document.fullscreenElement) {
+                    document.exitFullscreen();
+                    currentFullscreenVideo = null; // إعادة تعيين الفيديو الذي كان في فول سكرين
+                } else {
+                    // إيقاف الفيديوهات الأخرى
+                    videos.forEach(v => {
+                        if (v !== video) {
+                            const src = v.src;
+                            v.src = '';  // إيقاف الفيديو
+                            v.src = src; // إعادة تحميل الفيديو
+                        }
+                    });
 
-            // إيقاف تشغيل الفيديوهات الأخرى بإعادة تحميل iframe
-            videos.forEach(v => {
-                if (v !== video) {
-                    const src = v.src;
-                    v.src = src; // هذا يعيد تحميل الفيديو فيتوقف
+                    // الدخول إلى وضع fullscreen
+                    video.requestFullscreen();
+                    currentFullscreenVideo = video;
                 }
             });
-
-            // تشغيل fullscreen للفيديو الحالي
-            video.requestFullscreen();
         });
-    });
-</script>
+    </script>
     
    
 </body>
